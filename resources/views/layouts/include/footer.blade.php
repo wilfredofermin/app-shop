@@ -13,13 +13,13 @@
                     </a>
                 <li>
                     <a href="https://about.me/wilfredofermin">
-                        Conoceme..
+                        Conoceme más de mi...
                     </a>
                 </li>
             </ul>
         </nav>
         <div class="copyright pull-right">
-            &copy; 2016, Desarrollado com mucho <i class="fa fa-heart heart"></i> por <a href="http://wilfredofermin.github.io" target="_blank">WF Developers</a>
+            &copy; 2017, Desarrollado con <i class="fa fa-heart heart"></i> por <a href="http://wilfredofermin.github.io" target="_blank">WF Developers</a>
         </div>
     </div>
 </footer>

@@ -21,7 +21,7 @@
 
 </head>
 
-<body class="@yield('body-class')">
+<body class="@yield('body-class')"><!--index-page-->
 	<nav class="navbar navbar-transparent navbar-absolute">
     	<div class="container">
         	<!-- Brand and toggle get grouped for better mobile display -->
@@ -38,8 +38,16 @@
         	<div class="collapse navbar-collapse" id="navigation-example">
         		<ul class="nav navbar-nav navbar-right">
 					@guest
-                        <li><a href="{{ route('login') }}">Ingresar</a></li>
-                        <li><a href="{{ route('register') }}">Registrate</a></li>
+                        <li><a href="{{ route('login') }}">
+                                <button class="btn btn-info btn-round">
+                                    <i class="material-icons">account_circle</i> Acceso
+                                </button></a>
+
+                        <li><a href="{{ route('register') }}">
+                            <button class="btn btn-primary btn-round">
+                                <i class="material-icons">person_add</i> Registrate
+                            </button></a>
+                        </li>
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
