@@ -17,11 +17,11 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('description');
-            $table->text('long_description')->nulleable();
+            $table->text('long_description')->nullable();
             $table->float('price');
             //fk Relation
-            $table->integer('categories')->unsigned()->nulleable();
-            $table->foreign('categories')->references('id')->on('categories');
+            $table->integer('category_id')->unsigned()->nullable();
+            $table->foreign('category_id')->references('id')->on('categories');
 
             $table->timestamps();
         });
