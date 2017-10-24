@@ -18,9 +18,9 @@ class CreateProductImagesTable extends Migration
             $table->string('image');
             $table->boolean('featured')->default(false);
 
-            //fk Relation
-            $table->integer('product_id')->unsigned()->nullable();
-            $table->foreign('product_id')->references('id')->on('categories');
+            //fk Relation con PRODUCT
+            $table->integer('product_id')->unsigned();
+            $table->foreign('product_id')->references('id')->on('products');
             $table->timestamps();
         });
     }
