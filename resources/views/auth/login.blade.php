@@ -1,5 +1,6 @@
 @extends('layouts.principal')
 @section('body-class','signup-page')
+@section('title','Acceso App Shop')
 @section('content')
 <div class="header header-filter" style="background-image: url('{{asset('img/city.jpg')}}'); background-size: cover; background-position: top center;">
 	<div class="container">
