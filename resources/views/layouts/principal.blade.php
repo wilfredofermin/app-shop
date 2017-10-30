@@ -33,30 +33,28 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="{{url('/')}}">
-                <div class="logo-container">
+            <a href="{{url('/app')}}" id="tourInicio">
+                <div class="logo-container" >
                     <div class="logo">
                         <img src="{{asset('img/shop-icon.png')}}"  rel="tooltip" title="APP SHOP" data-placement="bottom" data-html="true" width="48" height="48">
                     </div>
                     <div class="brand">
                         APP SHOP
                     </div>
-
-
                 </div>
             </a>
         </div>
 
-        <div class="collapse navbar-collapse" id="navigation-index">
+        <div class="collapse navbar-collapse" id="navigation-index" >
             <ul class="nav navbar-nav navbar-right">
                 @guest
-                <li><a href="{{ route('login') }}">
-                        <button class="btn btn-info btn-round">
+                <li><a href="{{ route('login') }}" >
+                        <button class="btn btn-default btn-round" id="tourAcceso" >
                             <i class="material-icons">account_circle</i> Acceso
                         </button></a>
 
-                <li><a href="{{ route('register') }}">
-                        <button class="btn btn-success btn-round">
+                <li><a href="{{ route('register') }}" >
+                        <button class="btn btn-default btn-round" id="tourRegistro" >
                             <i class="material-icons">person_add</i> Registrate
                         </button></a>
                 </li>
@@ -98,6 +96,7 @@
 <script src="{{asset('js/jquery.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/bootstrap.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/material.min.js')}}"></script>
+<script src="{{asset('js/dknotus-tour.js')}}" type="text/javascript"></script>
 
 <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
 <script src="{{asset('js/nouislider.min.js')}}" type="text/javascript"></script>
@@ -108,6 +107,35 @@
 <!-- Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc -->
 <script src="{{asset('js/material-kit.js')}}" type="text/javascript"></script>
 
+<script>
+    $(function(){
+        $('#tourIntro').click(function(){
+            Tour.run([
+                {
+                    element: $('#tourAcceso'),
+                    content: 'Debes tener una cuenta para acceder al sistema de comprar',
+                    position: 'bottom'
+                },
+                {
+                    element: $('#tourRegistro'),
+                    content: 'De no tener una cuenta, accede desde aqui',
+                    position: 'bottom'
+                },
+
+                {
+                    element: $('#tourMsg'),
+                    content: 'Para alguna informacion de interes, escribe un mensaje',
+                    position: 'top'
+                },
+                {
+                    element: $('#tourTutorial'),
+                    content: 'Mira el tutorial de funcionamiento basico',
+                    position: 'bottom'
+                }
+            ],{language:"es"});
+        });
+    });
+</script>
 <script type="text/javascript">
 
     $().ready(function(){
@@ -123,4 +151,7 @@
 
     });
 </script>
+
+
+
 </html>

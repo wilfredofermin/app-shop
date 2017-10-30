@@ -9,8 +9,11 @@
                     <h1 class="title">Bienvenido a APP SHOP.</h1>
                     <h4>Realiza tu compra online y nos pondremos en contacto contigo para coordinar la entrega</h4>
                     <br />
-                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-danger btn-raised btn-lg">
-                        <i class="fa fa-play"></i> ¿Como funciona?
+                    <a href="#" id="tourTutorial" class="btn btn-danger btn-raised btn-lg" >
+                        <i class="fa fa-play" ></i> Como funciona?
+                    </a>
+                    <a href="#" id="tourIntro" class="btn btn-success btn-raised btn-lg" >
+                        <i class="fa fa-bus"></i> Inicia un demo
                     </a>
                 </div>
             </div>
@@ -61,15 +64,15 @@
             </div>
 
             <div class="section text-center">
-                <h2 class="title">Here is our team</h2>
+                <h2 class="title">Nuestros productos</h2>
                 <div class="team">
-                    @foreach($products as $product)
+                        @foreach($products as $product)
                     <div class="row">
                         <div class="col-md-4">
                             <div class="team-player">
-                                <img src="{{asset('img/avatar.jpg')}}" alt="Thumbnail Image" class="img-raised img-circle">
+                                <img src="{{$product->images}}" alt="Thumbnail Image" class="img-raised img-circle">
                                 <h4 class="title">{{$product->name}} <br />
-                                    <small class="text-muted">{{$product->category->}}</small>
+                                    <small class="text-muted">{{$product->category->name}}</small>
                                 </h4>
                                 <p class="description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some <a href="#">links</a> for people to be able to follow them outside the site.</p>
                                 <a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-twitter"></i></a>
@@ -79,9 +82,9 @@
                         </div>
                         <div class="col-md-4">
                             <div class="team-player">
-                                <img src="{{asset('img/christian.jpg')}}" alt="Thumbnail Image" class="img-raised img-circle">
+                                <img src="{{asset($product->image)}}" alt="Thumbnail Image" class="img-raised img-circle">
                                 <h4 class="title">{{$product->name}}<br />
-                                    <small class="text-muted">Designer</small>
+                                    <small class="text-muted">{{$product->category->name}}</small>
                                 </h4>
                                 <p class="description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some <a href="#">links</a> for people to be able to follow them outside the site.</p>
                                 <a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-twitter"></i></a>
@@ -92,7 +95,7 @@
                             <div class="team-player">
                                 <img src="{{asset('img/kendall.jpg')}}" alt="Thumbnail Image" class="img-raised img-circle">
                                 <h4 class="title">{{$product->name}}<br />
-                                    <small class="text-muted">Model</small>
+                                    <small class="text-muted">{{$product->category->name}}</small>
                                 </h4>
                                 <p>You can write here details about one of your team members. You can give more details about what they do. Feel free to add some <a href="#">links</a> for people to be able to follow them outside the site.</p>
                                 <a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-google-plus"></i></a>
@@ -104,7 +107,7 @@
                     @endforeach
                 </div>
             </div>
-            <div class="section landing-section">
+            <div class="section landing-section" id="tourMsg">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <h2 class="text-center title">Work with us</h2>
