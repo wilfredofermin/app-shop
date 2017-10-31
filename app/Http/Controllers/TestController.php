@@ -11,11 +11,11 @@ class TestController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
-       $products=Product::all();
+       $products=Product::paginate(12);
         return view('welcome')->with(compact('products'));
     }
 

@@ -11,12 +11,15 @@
 |
 */
 
-Route::get('/app', function () {
-    return view('welcome');
-});
+Route::get('/','TestController@index');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/app','TestController');
+
+//PRDOUCTS
+Route::get('/admin/products','ProductController@index');// Listado
+Route::get('/admin/products/create','ProductController@create');// Muestra el formulario
+Route::post('/admin/products','ProductController@store'); // Registra el producto

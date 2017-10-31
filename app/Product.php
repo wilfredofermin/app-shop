@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     //Product pertence a una Category
+
     public function category(){
         return $this->belongsTo(Category::class);
     }
